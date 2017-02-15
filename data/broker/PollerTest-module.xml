@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<centreonBroker>
+ <instance><![CDATA[7]]></instance>
+ <instance_name><![CDATA[PollerTest]]></instance_name>
+ <module_directory><![CDATA[/usr/share/centreon/lib/centreon-broker]]></module_directory>
+ <log_timestamp><![CDATA[0]]></log_timestamp>
+ <log_thread_id><![CDATA[0]]></log_thread_id>
+ <event_queue_max_size><![CDATA[50000]]></event_queue_max_size>
+ <command_file><![CDATA[]]></command_file>
+ <logger>
+  <name><![CDATA[/var/log/centreon-engine/PollerTest-module.log]]></name>
+  <config><![CDATA[yes]]></config>
+  <debug><![CDATA[no]]></debug>
+  <error><![CDATA[yes]]></error>
+  <info><![CDATA[no]]></info>
+  <level><![CDATA[low]]></level>
+  <type><![CDATA[file]]></type>
+ </logger>
+ <output>
+  <name><![CDATA[PollerTest-module-output]]></name>
+  <port><![CDATA[5669]]></port>
+  <failover><![CDATA[PollerTest-module-output-failover]]></failover>
+  <host><![CDATA[10.1.1.11]]></host>
+  <protocol><![CDATA[bbdo]]></protocol>
+  <tls><![CDATA[no]]></tls>
+  <negotiation><![CDATA[yes]]></negotiation>
+  <one_peer_retention_mode><![CDATA[no]]></one_peer_retention_mode>
+  <compression><![CDATA[no]]></compression>
+  <type><![CDATA[ipv4]]></type>
+ </output>
+ <output>
+  <name><![CDATA[PollerTest-module-output-failover]]></name>
+  <path><![CDATA[/var/lib/centreon-engine/PollerTest-module-output.retention]]></path>
+  <protocol><![CDATA[bbdo]]></protocol>
+  <compression><![CDATA[auto]]></compression>
+  <type><![CDATA[file]]></type>
+ </output>
+ <temporary>
+  <type><![CDATA[file]]></type>
+  <name><![CDATA[PollerTest-module-temporary]]></name>
+  <path><![CDATA[/var/lib/centreon-broker//PollerTest-module.temporary]]></path>
+  <protocol><![CDATA[bbdo]]></protocol>
+  <compression><![CDATA[auto]]></compression>
+  <max_size><![CDATA[524288000]]></max_size>
+ </temporary>
+</centreonBroker>
