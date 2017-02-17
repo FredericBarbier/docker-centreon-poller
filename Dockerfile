@@ -58,4 +58,8 @@ ADD scripts/waitVPNForPoller.sh /etc/centreon/waitVPNForPoller.sh
 RUN chown centreon-engine:centreon-engine /etc/centreon/waitVPNForPoller.sh
 RUN chmod u+x /etc/centreon/waitVPNForPoller.sh
 
+# Add script for openVpn route
+ADD scripts/customRoute.sh /etc/openvpn/config/customRoute.sh
+RUN chmod u+x /etc/openvpn/config/customRoute.sh
+
 CMD /usr/bin/supervisord --configuration=/etc/supervisord.conf
